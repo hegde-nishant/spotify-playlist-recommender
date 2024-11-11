@@ -5,15 +5,15 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 #Spotipy API credentials
-client_id = '22eb4af4128d453ea0b0f20219634010'
-client_secret = '0b2097f478114da495981277e4c2d761'
-client_uri = 'http://localhost/'
+client_id = 'Your spotify client ID'
+client_secret = 'Your spotify client secret'
+client_uri = 'Your spotify client uri'
 
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 #Reading million playlists csv
-df = pd.read_csv("/home/nhegde2/StatsProject/data/MPD.csv")
+df = pd.read_csv("Path to MPD.csv")
 
 #Basic data exploration
 print("First few rows...")
@@ -43,7 +43,7 @@ print("Value of one data point in column: [tracks]")
 
 print(df["tracks"][:1])
 
-track_features_path = "/gpfs/fs1/home/nhegde2/StatsProject/track_features_csv/"
+track_features_path = "Path to store track features csv files"
 
 #Format conversions
 tracks = df["tracks"]
